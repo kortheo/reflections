@@ -1,0 +1,19 @@
+1 How can you use the staging area to make sure you have one commit per logical change?
+
+Only add files to it that are involved in making the same functional change. One functional change may span multiple files. you can use git diff without arguments to track the changes made to files in the staging area to make sure you're adding the appropriate files.
+
+2 What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+when you want to implement expeirments features that you're unsure about. when you want to just exlpore new ideas. when you want to optimize and refactor code. when you want to make alternate verisons that you later want to merge, and you want to have a worksapce that won't affect your master. when someone wants to branch your code into their own project.
+
+How do the diagrams help you visualize the branch structure?
+
+They help you map out and connect with the branch points - the commits that where various branches diverged. It is rather similar to looking at a phylogeny and working with that kind of evolutionary logic, but more cut and dried. The concept of reachability is particularly key, as it allows you to pull out one string of history for a set of code from a branch of multiple versions of that code. This is all beginning to make more sense, and branching seems to be a hugely powerful part of git. It makes the code more like a playground.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+an updated branch with all the commits from a second branch integrated into it. This is as opposted to simply doing a commit using the most recent changes on another branch to an existing branch. All commits from both branches are included and reachable in the resulting branch. They are truly merged. There are possibly conflicts but not always; it's possibly to cleanly combine them into one. Diagrammatically they are represented as two branches coming together because this is consistent with what is actually happening.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+If you went with automatic merging, current technology wouldn't be sophisticated enough to have a high enough success rate. You'd have a lot of mistakes. That's the con - the pro is that it would be automatic, but in this case that's not good enough. With manual merges, the con is that a human always has to review the code to check, which may result in some cases where a computer really should have been able to figure out it, but we we were erring on the side of caution. The pro is that with manual merges, we will actually get the results correct, which is of course the most important aspect.
